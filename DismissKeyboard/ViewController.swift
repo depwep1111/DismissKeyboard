@@ -20,6 +20,17 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    @IBAction func userTappedBackground(sender: AnyObject) {
+        for view in self.view.subviews as! [UIView] {
+            if let textField = view as? UITextField {
+                textField.resignFirstResponder()
+            }
+        }
+    }
 
 }
 
